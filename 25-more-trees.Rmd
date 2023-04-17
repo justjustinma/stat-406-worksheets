@@ -135,8 +135,9 @@ bos.t2 <- tree(medv ~ ., data = dat.tr, control = tree.control(nobs = nrow(dat.t
 We plot the resulting tree
 
 ```{r prunetree1, fig.width=6, fig.height=6, message=FALSE, warning=FALSE}
-plot(bos.t2)
-text(bos.t2)
+install.packages("rpart.plot", repos='http://cran.us.r-project.org')
+library(rpart.plot)
+rpart.plot(bos.t2)
 ```
 
 As discussed before, we now fit a very large tree, which will be 
